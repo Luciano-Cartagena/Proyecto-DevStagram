@@ -54,6 +54,10 @@
                             <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
                 </div>
+                <div class="mb-5 flex items-center">
+                    <input type="checkbox" id="remember" name="remember" class="mr-2"> 
+                    <label for="remember" class="text-gray-500 text-sm">Mantener mi sesión abierta</label>
+                </div>
                 <input 
                 type="submit" 
                 value="Iniciar Sesión" 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -20,3 +21,5 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+
+Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');

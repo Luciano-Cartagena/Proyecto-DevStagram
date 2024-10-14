@@ -18,7 +18,7 @@
         </div>
 
         <div class="md:w-6/12 p-5 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+            <form action="{{ route('posts.store') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
                     <label for="titulo" class=" mb-2 block uppercase text-gray-500 font-bold">
@@ -41,21 +41,33 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="descripción" class=" mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="descripcion" class=" mb-2 block uppercase text-gray-500 font-bold">
                         Descripción
                     </label>
                     <textarea 
-                        id="descripción"
-                        name="descripción"
-                        placeholder="Descripción de la Publicacioón"
+                        id="descripcion"
+                        name="descripcion"
+                        placeholder="Descripción de la Publicación"
                         class="border p-3 w-full rounded-lg 
-                        @error('name')
+                        @error('descripcion')
                             border-red-500
                         @enderror"
-                    >{{old('titulo')}}</textarea>
+                    >{{old('descripcion')}}</textarea>
 
 
-                    @error('titulo')
+                    @error('descripcion')
+                        <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <input 
+                        name="imagen"
+                        type="hidden"
+
+                        value="{{ old('imagen')}}" 
+                    >
+                    @error('imagen')
                         <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror
                 </div>

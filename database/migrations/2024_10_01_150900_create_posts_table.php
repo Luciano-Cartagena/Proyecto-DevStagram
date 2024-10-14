@@ -23,7 +23,7 @@ return new class extends Migration
             //La diferencia entre varchar(tiene un limite) y text(Guarda mucho texto como una noticia)
             $table->string('titulo');
             
-            $table->text('description');
+            $table->text('descripcion');
             $table->string('imagen'); // retorda 40 digitos o id nombre de la imagen
 
             //Este metodo crea una columna de tipo UNSIGNED BIGINT. Se lo usa para relacionar con otra tabla.
